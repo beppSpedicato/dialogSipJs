@@ -1,0 +1,12 @@
+{
+  "compileOnSave": true,
+  "extends": "../tsconfig-base.json",
+  "compilerOptions": {
+    "sourceMap": true,
+    "resolveJsonModule": true
+  },
+  "include": [
+    "**/*.ts",
+    "**/*.json"
+  ]
+}

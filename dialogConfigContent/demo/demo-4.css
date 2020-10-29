@@ -1,0 +1,75 @@
+* {
+    font-family: 'Nunito Sans', sans-serif;
+}
+button{
+    outline: none
+}
+.buttonBox>button{
+    background-color: #f9f9f9;
+    border: 1px solid gray;
+    color: gray;
+    width: 4rem;
+    height: 4rem;
+    border-radius: 3rem;
+}
+.buttonBox>button:hover{
+    font-size: 1.3rem;
+    transition-duration: 1s;
+}
+.dropdown {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 15rem;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+.dropdown>.time{
+    min-width: 100%;
+    text-align: center;
+}
+.dropdown>.header{
+    min-width: 100%;
+    display: flex;
+    flex-direction: row-reverse;
+}
+.dropdown>.header>#closeDrop{
+    color: #dedede;
+    background-color: #f9f9f9;
+    border: none;
+}
+.dropdown>.header>#closeDrop:hover{
+    color: #000;
+    transition-duration: 1s;
+}
+.dropdown>.callButtons{
+    display:flex;
+    justify-content: center;
+}
+.dropdown>.callButtons>#hangup{
+    display: none;
+}
+.dropdown>.callButtons>.callDiv{
+    min-width: 100%;
+    display: flex;
+    justify-content:center;
+}
+.dropdown>.callButtons>.callDiv>button{
+    background-color: #f9f9f9;
+    border: none;
+    color: #8e8e8e;
+    display: flex;
+    justify-content: center;
+    min-width: 100%;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    font-size: 1rem;
+}
+.dropdown>.callButtons>.callDiv>#hangupButton:hover{
+    color: red;
+    transition-duration: 0.5s;
+}
+.dropdown>.callButtons>.callDiv>#startCallButton:hover{
+    color: green;
+    transition-duration: 0.5s;
+}

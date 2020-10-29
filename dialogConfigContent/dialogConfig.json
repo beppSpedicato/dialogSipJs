@@ -1,0 +1,14 @@
+{
+    "query_number_permission": false,
+    "default_destination_extention": "echo",
+    "pbx_url": "sipjs.onsip.com",
+    "sips_enable": false,
+    "webSocket_server": "wss://edge.sip.onsip.com",
+    "userAgentOptions": {
+        "displayName": "",
+        "authorizationPassword": "",
+        "authorizationUsername": "",
+        "autoStart": true,
+        "reconnectionAttemps": 100
+    }
+}

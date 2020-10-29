@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css">
+        <link rel="stylesheet" href="./demo-4.css">
+        <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300&display=swap" rel="stylesheet">
+    </head>
+    <body>
+
+        <div class="error" id="error">
+
+        </div>
+        <div class="box" id="callDiv">
+            <abbr class="buttonBox" title="Chiama" >
+                <button title="Chiama" id="dialogButton">
+                    <i class="fas fa-phone"></i>
+                </button>
+            </abbr>
+            <div class="dropdown" id="dropdown">
+                <div class="header">
+                    <button id="closeDrop">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+                <audio id="audio"></audio>
+                <div class="time" id="time"></div>
+                <div class="callButtons">
+                    <div class="callDiv" id="startCall">
+                        <button id="startCallButton" >
+                            <i class="fas fa-phone"></i>
+                        </button>
+                    </div>
+                    <div class="callDiv" id="hangup">
+                        <button id="hangupButton">
+                            <i class="fas fa-phone-slash"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="dist/demo-4.js"></script>
+    </body>
+</html>
