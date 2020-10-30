@@ -2,10 +2,10 @@
 
 ## SETUP ALL
 
-### Launch the installer script
+### Launch the installer script 
 
 ```
--$ install.sh
+-$ ./install.sh
 ```
 
 ###### if you see "Cannot find name 'require'" error don't worry, it's normal
