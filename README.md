@@ -21,8 +21,12 @@
 ```
 
 ### Move into sip.js folder and install node_modules
- ```cd SIP.js```
-```npm i```
+```
+cd SIP.js
+```
+```
+npm i
+```
 
 ### Build the dialog project
 ```
