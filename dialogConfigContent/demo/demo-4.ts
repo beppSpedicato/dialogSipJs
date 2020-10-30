@@ -20,9 +20,11 @@ const config = require("../dialogConfig.json");
 let target = "";
 
 if(config.pbx_url){
-    if(config.query_number_permission){
-        const queryString = window.location.search;
-        const num = new URLSearchParams(queryString).get("num");
+    const queryString = window.location.search;
+    const query = new URLSearchParams(queryString);
+    const num = query.get("num");
+    if(config.query_number_permission && num){
+        console.log("cioa");
         target = config.sips_enable? "sips:":"sip:" + num + "@" + config.pbx_url;
     } else if(config.default_destination_extention){
         target = config.sips_enable? "sips:":"sip:" + config.default_destination_extention + "@" + config.pbx_url;
@@ -32,11 +34,6 @@ if(config.pbx_url){
 } else {
     messageError.push("pbx_url NOT CONFIGURATED");
 }
-
-
-
-
-// Name for demo user
 
 // WebSocket Server URL
 if(!config.webSocket_server) { 
@@ -98,13 +95,21 @@ closeButton.addEventListener("click", () => {
         })
 })
 
+let stopDiv = getDiv("stop");
+let muteDiv = getDiv("mute");
+
 
 let startCallDiv = getDiv("startCall");
 let startCallButton = getButton("startCallButton");
 startCallButton.addEventListener("click", () => {
-    startCallDiv.style.display = "none";
-    hangupDiv.style.display = 'block';
-    simpleUser.call(target).catch((error: Error) => {
+    simpleUser.call(target)
+    .then(() => {
+        startCallDiv.style.display = "none";
+        hangupDiv.style.display = 'block';
+        stopDiv.style.display = 'block';
+        muteDiv.style.display = 'block';
+    })
+    .catch((error: Error) => {
         console.error(`[${simpleUser.id}] failed to place call`);
         console.error(error);
         alert("Failed to place call.\n" + error);
@@ -114,14 +119,47 @@ startCallButton.addEventListener("click", () => {
 let hangupDiv = getDiv("hangup");
 let hangupButton = getButton("hangupButton");
 hangupButton.addEventListener("click", () => {
-    hangupDiv.style.display = 'none';
-    startCallDiv.style.display = 'block';
-    simpleUser.hangup().catch((error: Error) => {
+    simpleUser.hangup()
+    .then(() => {
+        hangupDiv.style.display = 'none';
+        startCallDiv.style.display = 'block';
+        stopDiv.style.display = 'none';
+        muteDiv.style.display = 'none';
+    })
+    .catch((error: Error) => {
       console.error(`[${simpleUser.id}] failed to hangup call`);
       console.error(error);
       alert("Failed to hangup call.\n" + error);
     });
 });
+
+
+let muteButton = getButton("muteButton");
+let unMuteButton = getButton("unMuteButton");
+muteButton.addEventListener("click", () => {
+    simpleUser.mute();
+    unMuteButton.style.display = "block";
+    muteButton.style.display = "none";
+})
+unMuteButton.addEventListener("click", () => {
+    simpleUser.unmute();
+    muteButton.style.display = "block";
+    unMuteButton.style.display = "none";
+});
+
+let stopButton = getButton("stopButton");
+let unStopButton = getButton("unStopButton");
+stopButton.addEventListener("click", () => {
+    simpleUser.hold();
+    unStopButton.style.display = "block";
+    stopButton.style.display = "none";
+})
+unStopButton.addEventListener("click", () => {
+    simpleUser.unhold();
+    stopButton.style.display = "block";
+    unStopButton.style.display = "none";
+});
+
 
 setError(messageError);
 

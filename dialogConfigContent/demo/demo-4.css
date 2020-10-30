@@ -50,9 +50,12 @@ button{
     display: none;
 }
 .dropdown>.callButtons>.callDiv{
-    min-width: 100%;
+    width: 100%;
     display: flex;
     justify-content:center;
+}
+.dropdown>.callButtons>#stop , .dropdown>.callButtons>#mute {
+    display: none;
 }
 .dropdown>.callButtons>.callDiv>button{
     background-color: #f9f9f9;
@@ -72,4 +75,35 @@ button{
 .dropdown>.callButtons>.callDiv>#startCallButton:hover{
     color: green;
     transition-duration: 0.5s;
+}
+.dropdown>.callButtons>.callDiv>#stopButton:hover{
+    color: orange;
+    transition-duration: 0.5s;
+}
+.dropdown>.callButtons>.callDiv>#unStopButton:hover{
+    color: blue;
+    transition-duration: 0.5s;
+}
+.dropdown>.callButtons>.callDiv>#unMuteButton, .dropdown>.callButtons>.callDiv>#unStopButton{
+    display: none;
+}
+.dropdown>.callButtons>.callDiv>#muteButton:hover, .dropdown>.callButtons>.callDiv>#unMuteButton:hover{
+    color: black;
+    transition-duration: 0.5s;
+}
+.operation{
+    min-width: 100%;
+    height: 3rem;
+    display: flex;
+    justify-content: center;
+}
+.operation>.op{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items:center;
+}
+.operation>.op>button{
+
 }
