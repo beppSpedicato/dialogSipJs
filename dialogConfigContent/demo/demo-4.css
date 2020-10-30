@@ -22,7 +22,11 @@ button{
     background-color: #f9f9f9;
     min-width: 15rem;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    border-radius: 0.5rem;
     z-index: 1;
+    border: 1px solid gray;
+    margin-left: 2rem;
+    margin-top: 0.3rem;
 }
 .dropdown>.time{
     min-width: 100%;
@@ -32,11 +36,15 @@ button{
     min-width: 100%;
     display: flex;
     flex-direction: row-reverse;
+
+    border-radius: 1rem;
 }
 .dropdown>.header>#closeDrop{
     color: #dedede;
     background-color: #f9f9f9;
     border: none;
+    margin-top:0.5rem;
+    margin-right: 0.5rem;
 }
 .dropdown>.header>#closeDrop:hover{
     color: #000;
@@ -45,6 +53,8 @@ button{
 .dropdown>.callButtons{
     display:flex;
     justify-content: center;
+    border-radius: 1rem;
+    margin-bottom: 1rem;
 }
 .dropdown>.callButtons>#hangup{
     display: none;
