@@ -53,7 +53,7 @@
 
 
 # CONFIG CALLER DIALOG
-#### For the configuration go, after setup into SIP.js/dialogContent.json
+#### For the configuration go (after setup) into SIP.js/dialogContent.json
 
 
 
