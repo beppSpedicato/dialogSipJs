@@ -2,38 +2,10 @@
 
 ## SETUP ALL
 
-### clone into project directory sip.js
+### Launch the installer script
 
 ```
--$ git clone https://github.com/onsip/SIP.js
-```
-
-### Replace demo folder and ts configuration in sip.js directory with dialogContentConfig demo folder
-
-```
--$ rm -r SIP.js/demo
-```
-```
--$ rm tsconfig-base.json
-```
-```
--$ mv dialogConfigContent/* SIP.js/
-```
-
-### Move into sip.js folder and install node_modules
-```
--$ cd SIP.js
-```
-```
--$ npm i
-```
-
-### Build the dialog project
-```
--$ cd SIP.js/demo 
-```
-```
--$ npm run build-demo
+-$ install.sh
 ```
 
 ###### if you see "Cannot find name 'require'" error don't worry, it's normal
