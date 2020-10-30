@@ -15,7 +15,9 @@
 ### For import it into your html/php page you need to:
 
 #### add style.css to your page
-  ```<link rel="stylesheet" href="path/to/dialogSipJs/style.css" />```
+  ```
+  <link rel="stylesheet" href="path/to/dialogSipJs/style.css" />
+  ```
 
 #### add the div with the iframe to your body
 ```
